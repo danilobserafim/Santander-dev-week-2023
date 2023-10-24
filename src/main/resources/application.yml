@@ -1,26 +1,36 @@
 ## YAML Template.
 ---
-server:
-  port: 8090
+#server:
+#  port: 8090
+#spring:
+#    datasource:
+#        url: jdbc:h2:mem:sdw2023
+#        driver-class-name: org.h2.Driver
+#        username: sdw2023
+#        password: 
+#    jpa:
+#        database-platform: org.hibernate.dialect.H2Dialect
+#        show-sql: true
+#        open-in-view: false
+#        hibernate:
+#            ddl-auto: create
+#        properties: 
+#            hibernate:
+#                format_sql: true
+#    h2:
+#        console:
+#            enabled: true
+#            path: /h2-console
+#            settings:
+#                trace: false
+#                web-allow-others: true
+
 spring:
-    datasource:
-        url: jdbc:h2:mem:sdw2023
-        driver-class-name: org.h2.Driver
-        username: sdw2023
-        password: 
-    jpa:
-        database-platform: org.hibernate.dialect.H2Dialect
-        show-sql: true
-        open-in-view: false
-        hibernate:
-            ddl-auto: create
-        properties: 
-            hibernate:
-                format_sql: true
-    h2:
-        console:
-            enabled: true
-            path: /h2-console
-            settings:
-                trace: false
-                web-allow-others: true
+  datasource:
+    url: jdbc:postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}
+    username: ${PGUSER}
+    password: ${PGPASSWORD}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create
