@@ -9,6 +9,7 @@ import me.dio.Santanderdevweek2023.domain.model.User;
 import me.dio.Santanderdevweek2023.domain.repository.UserRepository;
 import me.dio.Santanderdevweek2023.service.UserService;
 import org.springframework.stereotype.Service;
+import java.util.NoSuchElementException;
 
 /**
  *
@@ -26,7 +27,7 @@ public class UserServiceImpl implements UserService{
     
     @Override
     public User findById(Long id) {
-        return userRepository.findById(id).orElseThrow(NoSuchFieldError::new);
+        return userRepository.findById(id).orElseThrow(NoSuchElementException::new);
     }
 
     @Override
